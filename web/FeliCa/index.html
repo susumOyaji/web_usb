@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+	<title>USBDevice Test</title>
+	<style>
+		.textCenter { text-align: center ; }
+	</style>
+</head>
+<body>
+	<h3>
+		<div class="header-title textCenter">
+			USBDevice Test
+		</div>
+	</h3>
+
+    <div class="mainArea">
+		<div class="button textCenter">
+			<button id="exe">Execute</button>
+		</div>
+		<br><br>
+		<div class="message">
+			<div id="message-title" class="message-title" style="display: inline;"></div><br>
+			<div id="message" class="message-info" style="display: inline;"></div>
+		</div>
+	</div>
+
+<script type='module'>
+
+	let messageTitle = document.querySelector( '#message-title' ) ;
+	let message = document.querySelector( '#message' ) ;
+	let exe = document.querySelector( '#exe' ) ;
+
+	exe.addEventListener( 'click', async () => {
+		const usbDevice = await navigator.usb.requestDevice( { filters: [{}] } ) ;	// USB機器への接続リクエスト
+		console.log( usbDevice) ;
+		return;
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+<div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+		
+		<form class="form">
+			<button type="submit" id="login-button">Login</button>
+		</form>
+        <script src="js/webusb.js"></script>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
